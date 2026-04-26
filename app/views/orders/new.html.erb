@@ -1,0 +1,21 @@
+<h1>Нове замовлення</h1>
+
+<%= form_with model: @order do |f| %>
+  <div>
+    Телефон:<br>
+    <%= f.text_field :customer_phone %>
+  </div>
+
+  <div>
+    Послуга:<br>
+    <%= f.text_field :service_type %>
+  </div>
+
+  <div>
+    Коментар:<br>
+    <%= f.text_area :notes %>
+  </div>
+
+  <br>
+  <%= f.submit "Створити" %>
+<% end %>
