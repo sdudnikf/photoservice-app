@@ -1,0 +1,12 @@
+{
+  "name": "Rails App",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.2",
+  "postCreateCommand": "bundle install && rails db:migrate",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Rails Server",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
