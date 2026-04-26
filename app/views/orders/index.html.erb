@@ -1,0 +1,25 @@
+<h1>Замовлення</h1>
+
+<%= link_to "Нове замовлення", new_order_path %>
+
+<table border="1">
+  <tr>
+    <th>№</th>
+    <th>Телефон</th>
+    <th>Послуга</th>
+    <th>Статус</th>
+    <th></th>
+  </tr>
+
+  <% @orders.each do |o| %>
+    <tr>
+      <td><%= o.order_number %></td>
+      <td><%= o.customer_phone %></td>
+      <td><%= o.service_type %></td>
+      <td><%= o.status %></td>
+      <td>
+        <%= button_to "Готово", ready_order_path(o), method: :post %>
+      </td>
+    </tr>
+  <% end %>
+</table>
